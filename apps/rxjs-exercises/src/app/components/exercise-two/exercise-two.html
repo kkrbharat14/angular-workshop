@@ -1,0 +1,25 @@
+<p>
+    loadUsers is called by clicking on the button below
+    Make sure that loadUsers is called once and then cached 
+    for subsequent button clicks.
+</p>
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group me-2" role="group" aria-label="First group">
+    <button class="btn btn-primary" (click)="loadUsers()">Load Users</button>
+  </div>
+  <div class="btn-group me-2" role="group" aria-label="Second group">
+    <button class="btn btn-secondary" (click)="clearUsers()">Clear Users</button>
+  </div>
+</div>
+
+
+
+@if (users) {
+    <h3>Users:</h3>
+    <ul>
+        @for (user of users; track user.id) {
+            <li>{{ user.name }}</li>
+            <li>{{ user.email }}</li>
+        }
+    </ul>
+}

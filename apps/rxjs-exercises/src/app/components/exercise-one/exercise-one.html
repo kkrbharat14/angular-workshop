@@ -1,0 +1,25 @@
+<p>
+    Create Service to fetch users and posts,
+    Do it parallelly.
+    Create two methods in http service: getUsers() and getPosts()
+</p>
+
+
+<h3>Users:</h3>
+@if (users) {
+    <ul>
+        @for (user of users; track user.id) {
+            <li>{{ user.name }}</li>
+            <li>{{ user.email }}</li>
+        }
+    </ul>
+}
+<h3>Posts:</h3>
+@if (posts) {
+    <ul>
+        @for (post of posts; track post.id) {
+            <li>{{ post.title }}</li>
+            <li>{{ post.body }}</li>
+        }
+    </ul>
+}

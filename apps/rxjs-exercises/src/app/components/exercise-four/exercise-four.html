@@ -1,0 +1,16 @@
+<p>Call loadLoggedInUser() 
+    this should retry loading the user data up to 3 times
+    if error status ias 503.
+</p>
+
+<button class="btn btn-primary" (click)="loadLoggedInUser()">Load Logged In User</button>
+
+@if (loggedInUser) {
+    <h3>Logged In User:</h3>
+    <p>Name: {{ loggedInUser.userName }}</p>
+    <p>Email: {{ loggedInUser.userEmail }}</p>
+}
+
+@if (hasError) {
+    <p class="text-danger">Error: Failed to get logged in user after retries.</p>
+}

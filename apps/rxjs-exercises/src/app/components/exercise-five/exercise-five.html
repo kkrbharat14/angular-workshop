@@ -1,0 +1,10 @@
+<p>Implementing polling with RxJS in Angular
+    poll the mockService.doCreditCheck() method
+    poll this until the returned object's 'completed' property is true
+</p>
+
+<button class="btn btn-primary" (click)="doCreditCheck()">Start Credit Check</button>
+
+@if (completed) {
+    <p class="text-success mt-3">Credit Check Completed!</p>
+}
