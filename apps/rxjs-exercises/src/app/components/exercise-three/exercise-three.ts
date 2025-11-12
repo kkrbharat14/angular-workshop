@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-exercise-three',
@@ -21,6 +22,15 @@ export class ExerciseThree implements OnInit {
     // wait for input to stop for 1000ms before making api call
     // ignore new term if same as previous term
     // update searchResults with api results
+    this.searchControl.valueChanges.pipe(
+      debounceTime(1000),
+      distinctUntilChanged(),
+      switchMap(term => this.http.get<any[]>(`https://jsonplaceholder.typicode.com/users?name_like=${term}`))
+    ).subscribe({
+      next: (results) => {
+        this.searchResults = results;
+      }
+    });
   }
 
 

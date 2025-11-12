@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MockService } from '../../services/mock/mock.service';
+import { delay, interval, switchMap, take, takeWhile, timer } from 'rxjs';
 
 @Component({
   selector: 'app-exercise-five',
@@ -21,8 +22,15 @@ export class ExerciseFive {
     // Log each attempt to console is already done in service
     // Continue calling until the result's 'completed' property is true
 
-    
-    
+    interval(1000).pipe(
+      take(this.maxPolling),
+      switchMap(() => this.mockService.doCreditCheck()),
+      takeWhile(result => !result.completed, true)
+    ).subscribe({
+      next: (result) => {
+        this.completed = result.completed;
+      }
+    });
     // Bonus: Stop polling after maxPolling attempts
   }
   }

@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Post, User } from '../../services/http/http.interface';
 import { HttpService } from '../../services/http/http.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-exercise-one',
@@ -18,6 +19,15 @@ export class ExerciseOne implements OnInit {
 
   ngOnInit(): void {
     // Implement code here
+    forkJoin({
+      users: this.httpService.getUsers(),
+      posts: this.httpService.getPosts()
+    }).subscribe({
+      next: ({ users, posts }) => {
+        this.users = users;
+        this.posts = posts;
+      }
+    })
   }
 
 }

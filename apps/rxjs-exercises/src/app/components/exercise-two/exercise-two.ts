@@ -15,6 +15,12 @@ export class ExerciseTwo implements OnInit {
 
   ngOnInit(): void {
     // First Time Users are loaded here
+    // this.httpService.getUsers().subscribe({
+    //   next: (users) => {
+    //     this.users = users;
+    //   }
+    // });
+    this.loadUsersUsingShareReplay();
   }
 
   clearUsers() {
@@ -23,6 +29,21 @@ export class ExerciseTwo implements OnInit {
 
   loadUsers() {
     // Implement code for caching here
+    // this.httpService.getCachedUsers().subscribe({
+    //   next: (users) => {
+    //     this.users = users;
+    //   }
+    // });
+    this.loadUsersUsingShareReplay();
+  }
+
+  loadUsersUsingShareReplay() {
+    // Implement code for caching here using shareReplay
+    this.httpService.getUsersUsingShareReplay().subscribe({
+      next: (users) => {
+        this.users = users;
+      }
+    });
   }
 
 }

@@ -10,7 +10,7 @@ export class MockService {
 
     private creditCheckAttempt = 0;
 
-    private maxAttemptsForLogggedInUser = 3;
+    private maxAttemptsForLogggedInUser = 2;
     private currentAttempt = 0;
 
     getLoggedInUser(): Observable<LoggedInUser> {
