@@ -1,0 +1,16 @@
+<p>
+    Make a template that displays a temperature which can be increased and decreased by 2 buttons.
+    When it is below 10 degrees, display a message that it is cold.
+    When it is above 25 degrees, display a message that it is warm.
+    Make an effect that reacts on temperature changes and update the background color related to the temperature.
+</p>
+<!-- set background color using effect on div-->
+<div class="temperature-container">
+<!-- add temperature signal below-->
+<h2>Temperature: </h2>
+<button class="btn btn-primary me-2" (click)="decreaseTemperature()">Decrease</button>
+<button class="btn btn-primary" (click)="increaseTemperature()">Increase</button>
+
+</div>
+
+<!-- add temperatureMessage signal below to show message-->
