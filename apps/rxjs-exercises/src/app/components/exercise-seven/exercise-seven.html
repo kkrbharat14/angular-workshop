@@ -7,10 +7,13 @@
 <!-- set background color using effect on div-->
 <div class="temperature-container">
 <!-- add temperature signal below-->
-<h2>Temperature: </h2>
+<h2>Temperature: {{temperature()}}</h2>
 <button class="btn btn-primary me-2" (click)="decreaseTemperature()">Decrease</button>
 <button class="btn btn-primary" (click)="increaseTemperature()">Increase</button>
 
 </div>
 
 <!-- add temperatureMessage signal below to show message-->
+@if (temperatureMessage()) {
+    <p>{{ temperatureMessage() }}</p>
+}

@@ -4,10 +4,21 @@
     You can use a timer and set a variable where defer references to. Later we will make a signal for this.
 </p>
 
-<div class="spinner-border" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>
+
 
 <!--  Use Defer and Placeholder here-->
+@defer (when ready) {
+    <ng-container *ngTemplateOutlet="welcomeUser; context: { message: 'Hello User' }"></ng-container>
+} @placeholder {
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+}
+<ng-template #welcomeUser let-message="message">
+    <strong>{{ message }}</strong>
+</ng-template>
+ 
+
+
 
 

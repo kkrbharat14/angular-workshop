@@ -1,9 +1,11 @@
+import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { interval, map } from 'rxjs';
 
 @Component({
   selector: 'app-exercise-eight',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './exercise-eight.html',
   styleUrl: './exercise-eight.scss',
 })
@@ -16,5 +18,6 @@ export class ExerciseEight {
 
   // Convert  Observable time$ to use toSignal() for reactivity and use it in template for 
   // displaying current time
+  time = toSignal(this.time$);
 
 }
