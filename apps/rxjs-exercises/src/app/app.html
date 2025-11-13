@@ -1,10 +1,41 @@
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <a class="btn btn-link" routerLink="/exercise-one">Exercise 1 - Fetch data in parallel</a>
-    <a class="btn btn-link" routerLink="/exercise-two">Exercise 2 - Caching API Calls</a>
-    <a class="btn btn-link" routerLink="/exercise-three">Exercise 3 - Implement Search with Debounce</a>
-    <a class="btn btn-link" routerLink="/exercise-four">Exercise 4 - Retry Api Calls for certain errors</a>
-    <a class="btn btn-link" routerLink="/exercise-five">Exercise 5 - Implement Polling with RxJS</a>
+    Angular Workshop - 2025
   </div>
 </nav>
-<router-outlet></router-outlet>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a class="btn btn-link" routerLink="/exercise-one">Exercise 1 - Fetch data in parallel</a>
+        </li>
+        <li class="list-group-item">
+          <a class="btn btn-link" routerLink="/exercise-two">Exercise 2 - Caching API Calls</a>
+        </li>
+        <li class="list-group-item">
+          <a class="btn btn-link" routerLink="/exercise-three">Exercise 3 - Implement Search with Debounce</a>
+        </li>
+        <li class="list-group-item">
+          <a class="btn btn-link" routerLink="/exercise-four">Exercise 4 - Retry Api Calls for certain errors</a>
+        </li>
+        <li class="list-group-item">
+          <a class="btn btn-link" routerLink="/exercise-five">Exercise 5 - Implement Polling with RxJS</a>
+        </li>
+        <li class="list-group-item">
+          <a class="btn btn-link" routerLink="/exercise-six">Exercise 6 - NgTemplate, Using Defer and Placeholder</a>
+        </li>
+        <li class="list-group-item">
+          <a class="btn btn-link" routerLink="/exercise-seven">Exercise 7 - Signals, computed signals and effects.</a>
+        </li>
+        <li class="list-group-item">
+          <a class="btn btn-link" routerLink="/exercise-eight">Exercise 8 - Display Live Clock</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
